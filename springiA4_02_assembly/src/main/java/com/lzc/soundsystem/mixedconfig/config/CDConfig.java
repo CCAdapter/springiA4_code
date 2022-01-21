@@ -9,8 +9,8 @@ import com.lzc.soundsystem.mixedconfig.impl.SgtPeppers;
 @Configuration
 public class CDConfig {
 
-	@Bean
-	public CompactDisc compactDisc() {
-		return new SgtPeppers();
-	}
+    @Bean
+    public CompactDisc compactDisc() {
+        return new SgtPeppers();
+    }
 }

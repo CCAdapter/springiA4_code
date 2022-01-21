@@ -1,7 +1,7 @@
 
- /**
+/**
  * FileName:     MagicBean.java
- * Createdate:   2019-02-16 21:25:58   
+ * Createdate:   2019-02-16 21:25:58
  */
 
 package com.lzc.assembly.conditional;
@@ -10,10 +10,10 @@ package com.lzc.assembly.conditional;
 /**
  * Description:   
  * Copyright:   Copyright (c)2019    
- * @author:     LZC  
- * @version:    1.0  
- * @date:   	2019-02-16 21:25:58   
- *  
+ * @author: LZC
+ * @version: 1.0
+ * @date: 2019-02-16 21:25:58
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  

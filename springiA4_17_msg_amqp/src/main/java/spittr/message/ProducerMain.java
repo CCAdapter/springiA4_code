@@ -10,20 +10,20 @@ import spittr.domain.Spittle;
 
 public class ProducerMain {
 
-  public static void main(String[] args) throws Exception {
-    
-    ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/amqp-producer.xml");
-    AmqpTemplate template = (AmqpTemplate) context.getBean("rabbitTemplate");
-    
-    for (int i=0; i < 20; i++) {
-      System.out.println("Sending message #" + i);
-      Spittle spittle = new Spittle((long) i, null, "Hello world (" + i + ")", new Date());
-      template.convertAndSend(spittle);
-      Thread.sleep(5000);
+    public static void main(String[] args) throws Exception {
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/spring/amqp-producer.xml");
+        AmqpTemplate template = (AmqpTemplate) context.getBean("rabbitTemplate");
+
+        for (int i = 0; i < 20; i++) {
+            System.out.println("Sending message #" + i);
+            Spittle spittle = new Spittle((long) i, null, "Hello world (" + i + ")", new Date());
+            template.convertAndSend(spittle);
+            Thread.sleep(5000);
+        }
+
+        System.out.println("Done!");
+
     }
-    
-    System.out.println("Done!");
-    
-  }
 
 }

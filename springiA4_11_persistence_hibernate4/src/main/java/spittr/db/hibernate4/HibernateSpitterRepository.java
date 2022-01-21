@@ -16,45 +16,45 @@ import spittr.domain.Spitter;
 @Repository
 public class HibernateSpitterRepository implements SpitterRepository {
 
-	private SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-	@Inject
-	public HibernateSpitterRepository(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;		 //<co id="co_InjectSessionFactory"/>
-	}
-	
-	private Session currentSession() {
-		return sessionFactory.getCurrentSession();//<co id="co_RetrieveCurrentSession"/>
-	}
-	
-	public long count() {
-		return findAll().size();
-	}
+    @Inject
+    public HibernateSpitterRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;         //<co id="co_InjectSessionFactory"/>
+    }
 
-	public Spitter save(Spitter spitter) {
-		Serializable id = currentSession().save(spitter);  //<co id="co_UseCurrentSession"/>
-		return new Spitter((Long) id, 
-				spitter.getUsername(), 
-				spitter.getPassword(), 
-				spitter.getFullName(), 
-				spitter.getEmail(), 
-				spitter.isUpdateByEmail());
-	}
+    private Session currentSession() {
+        return sessionFactory.getCurrentSession();//<co id="co_RetrieveCurrentSession"/>
+    }
 
-	public Spitter findOne(long id) {
-		return (Spitter) currentSession().get(Spitter.class, id); 
-	}
+    public long count() {
+        return findAll().size();
+    }
 
-	public Spitter findByUsername(String username) {		
-		return (Spitter) currentSession() 
-				.createCriteria(Spitter.class) 
-				.add(Restrictions.eq("username", username))
-				.list().get(0);
-	}
+    public Spitter save(Spitter spitter) {
+        Serializable id = currentSession().save(spitter);  //<co id="co_UseCurrentSession"/>
+        return new Spitter((Long) id,
+                spitter.getUsername(),
+                spitter.getPassword(),
+                spitter.getFullName(),
+                spitter.getEmail(),
+                spitter.isUpdateByEmail());
+    }
 
-	public List<Spitter> findAll() {
-		return (List<Spitter>) currentSession() 
-				.createCriteria(Spitter.class).list(); 
-	}
-	
+    public Spitter findOne(long id) {
+        return (Spitter) currentSession().get(Spitter.class, id);
+    }
+
+    public Spitter findByUsername(String username) {
+        return (Spitter) currentSession()
+                .createCriteria(Spitter.class)
+                .add(Restrictions.eq("username", username))
+                .list().get(0);
+    }
+
+    public List<Spitter> findAll() {
+        return (List<Spitter>) currentSession()
+                .createCriteria(Spitter.class).list();
+    }
+
 }

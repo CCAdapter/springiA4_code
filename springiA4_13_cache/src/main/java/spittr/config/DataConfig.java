@@ -16,22 +16,22 @@ import org.springframework.transaction.annotation.TransactionManagementConfigure
 @EnableTransactionManagement
 public class DataConfig implements TransactionManagementConfigurer {
 
-  @Bean
-  public DataSource dataSource() {
-    EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-    builder.setType(EmbeddedDatabaseType.H2);
-    builder.addScript("classpath:spittr/db/jdbc/schema.sql");
-    builder.addScript("classpath:spittr/db/jdbc/test-data.sql");
-    return builder.build();
-  }
-  
-  @Bean
-  public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-    return new JdbcTemplate(dataSource);
-  }
-  
-  public PlatformTransactionManager annotationDrivenTransactionManager() {
-    return new DataSourceTransactionManager(dataSource());
-  }
+    @Bean
+    public DataSource dataSource() {
+        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
+        builder.setType(EmbeddedDatabaseType.H2);
+        builder.addScript("classpath:spittr/db/jdbc/schema.sql");
+        builder.addScript("classpath:spittr/db/jdbc/test-data.sql");
+        return builder.build();
+    }
+
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
+
+    public PlatformTransactionManager annotationDrivenTransactionManager() {
+        return new DataSourceTransactionManager(dataSource());
+    }
 
 }

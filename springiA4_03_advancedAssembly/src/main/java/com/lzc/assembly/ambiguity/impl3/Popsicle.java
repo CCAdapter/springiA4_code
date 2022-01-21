@@ -1,7 +1,7 @@
 
- /**
+/**
  * FileName:     Popsicle.java
- * Createdate:   2019-02-16 22:14:55   
+ * Createdate:   2019-02-16 22:14:55
  */
 
 package com.lzc.assembly.ambiguity.impl3;
@@ -14,10 +14,10 @@ import com.lzc.assembly.ambiguity.Dessert;
 /**
  * Description: 冰棒  
  * Copyright:   Copyright (c)2019    
- * @author:     LZC  
- * @version:    1.0  
- * @date:   	2019-02-16 22:14:55   
- *  
+ * @author: LZC
+ * @version: 1.0
+ * @date: 2019-02-16 22:14:55
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -27,9 +27,9 @@ import com.lzc.assembly.ambiguity.Dessert;
 @Qualifier("cold")
 public class Popsicle implements Dessert {
 
-	@Override
-	public void desc() {
-		System.out.println("popsicle");
-	}
+    @Override
+    public void desc() {
+        System.out.println("popsicle");
+    }
 
 }

@@ -18,62 +18,62 @@ import spittr.domain.Spittle;
 @Repository
 public class HibernateSpittleRepository implements SpittleRepository {
 
-	private SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
-	@Inject
-	public HibernateSpittleRepository(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
-	}
-	
-	private Session currentSession() {
-		return sessionFactory.getCurrentSession();//<co id="co_RetrieveCurrentSession"/>
-	}
+    @Inject
+    public HibernateSpittleRepository(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
-	public long count() {
-		return findAll().size(); 
-	}
+    private Session currentSession() {
+        return sessionFactory.getCurrentSession();//<co id="co_RetrieveCurrentSession"/>
+    }
 
-	public List<Spittle> findRecent() {
-		return findRecent(10);
-	}
+    public long count() {
+        return findAll().size();
+    }
 
-	public List<Spittle> findRecent(int count) {
-		return (List<Spittle>) spittleCriteria()
-				.setMaxResults(count)
-				.list();
-	}
+    public List<Spittle> findRecent() {
+        return findRecent(10);
+    }
 
-	public Spittle findOne(long id) {
-		return (Spittle) currentSession().get(Spittle.class, id);
-	}
+    public List<Spittle> findRecent(int count) {
+        return (List<Spittle>) spittleCriteria()
+                .setMaxResults(count)
+                .list();
+    }
 
-	public Spittle save(Spittle spittle) {
-		Serializable id = currentSession().save(spittle);
-		return new Spittle(
-			(Long) id, 
-			spittle.getSpitter(), 
-			spittle.getMessage(), 
-			spittle.getPostedTime());
-	}
+    public Spittle findOne(long id) {
+        return (Spittle) currentSession().get(Spittle.class, id);
+    }
 
-	public List<Spittle> findBySpitterId(long spitterId) {
-		return spittleCriteria()
-				.add(Restrictions.eq("spitter.id", spitterId))
-				.list();
-	}
-	
-	public void delete(long id) {
-		currentSession().delete(findOne(id));
-	}
-	
-	public List<Spittle> findAll() {
-		return (List<Spittle>) spittleCriteria().list(); 
-	}
-	
-	private Criteria spittleCriteria() {
-		return currentSession() 
-				.createCriteria(Spittle.class)
-				.addOrder(Order.desc("postedTime"));
-	}
+    public Spittle save(Spittle spittle) {
+        Serializable id = currentSession().save(spittle);
+        return new Spittle(
+                (Long) id,
+                spittle.getSpitter(),
+                spittle.getMessage(),
+                spittle.getPostedTime());
+    }
+
+    public List<Spittle> findBySpitterId(long spitterId) {
+        return spittleCriteria()
+                .add(Restrictions.eq("spitter.id", spitterId))
+                .list();
+    }
+
+    public void delete(long id) {
+        currentSession().delete(findOne(id));
+    }
+
+    public List<Spittle> findAll() {
+        return (List<Spittle>) spittleCriteria().list();
+    }
+
+    private Criteria spittleCriteria() {
+        return currentSession()
+                .createCriteria(Spittle.class)
+                .addOrder(Order.desc("postedTime"));
+    }
 
 }

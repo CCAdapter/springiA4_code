@@ -1,7 +1,7 @@
-/**  
+/**
  * FileName:     CDPlayerTest.java
  * Createdate:   2019-02-13 14:03:35
- */  
+ */
 
 
 package com.lzc.soundsystem.autoconfig.impl;
@@ -18,13 +18,13 @@ import com.lzc.soundsystem.autoconfig.CompactDisc;
 import com.lzc.soundsystem.autoconfig.MediaPlayer;
 import com.lzc.soundsystem.autoconfig.config.CDPlayerConfig;
 
-/**  
+/**
  * Description: 加载javaconfig开启扫描，测试自动注入  
  * Copyright:   Copyright (c)2019 
- * @author:     LiZC  
- * @version:    1.0  
+ * @author: LiZC
+ * @version: 1.0
  * Create at:   2019-02-13 14:03:35  
- *  
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -32,23 +32,23 @@ import com.lzc.soundsystem.autoconfig.config.CDPlayerConfig;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=CDPlayerConfig.class)
+@ContextConfiguration(classes = CDPlayerConfig.class)
 public class CDPlayerTest {
 
-	@Autowired
-	private MediaPlayer player;
-	
-	@Autowired
-	private CompactDisc cd;
-	
-	@Test
-	public void cdShouldNotBeNull() {
-		assertNotNull(cd);
-	}
-	
-	@Test
-	public void play() {
-		player.play();
-	}
+    @Autowired
+    private MediaPlayer player;
+
+    @Autowired
+    private CompactDisc cd;
+
+    @Test
+    public void cdShouldNotBeNull() {
+        assertNotNull(cd);
+    }
+
+    @Test
+    public void play() {
+        player.play();
+    }
 
 }

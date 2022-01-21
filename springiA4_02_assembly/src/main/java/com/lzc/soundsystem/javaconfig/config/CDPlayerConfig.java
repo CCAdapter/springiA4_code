@@ -10,14 +10,14 @@ import com.lzc.soundsystem.javaconfig.impl.SgtPeppers;
 @Configuration
 public class CDPlayerConfig {
 
-	@Bean
-	public CompactDisc compactDisc() {
-		return new SgtPeppers();
-	}
+    @Bean
+    public CompactDisc compactDisc() {
+        return new SgtPeppers();
+    }
 
-	@Bean
-	public CDPlayer cdPlayer(CompactDisc compactDisc) {
-		return new CDPlayer(compactDisc);
-	}
+    @Bean
+    public CDPlayer cdPlayer(CompactDisc compactDisc) {
+        return new CDPlayer(compactDisc);
+    }
 
 }

@@ -1,7 +1,7 @@
 
- /**
+/**
  * FileName:     TrackCounterTest.java
- * Createdate:   2019-02-18 16:49:17   
+ * Createdate:   2019-02-18 16:49:17
  */
 
 package com.lzc.aop.annotation;
@@ -20,10 +20,10 @@ import com.lzc.aop.annotation.config.TrackCounterConfig;
 /**
  * Description:   
  * Copyright:   Copyright (c)2019    
- * @author:     LZC  
- * @version:    1.0  
- * @date:   	2019-02-18 16:49:17   
- *  
+ * @author: LZC
+ * @version: 1.0
+ * @date: 2019-02-18 16:49:17
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -31,28 +31,28 @@ import com.lzc.aop.annotation.config.TrackCounterConfig;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=TrackCounterConfig.class)
+@ContextConfiguration(classes = TrackCounterConfig.class)
 public class TrackCounterTest {
 
-	@Autowired
-	private BlankDisc blankDisc;
-	
-	@Autowired
-	private TrackCounter trackCounter;
-	
-	@Test
-	public void test() {
-		blankDisc.playTrack(1);
-		blankDisc.playTrack(3);
-		blankDisc.playTrack(3);
-		blankDisc.playTrack(3);
-		blankDisc.playTrack(4);
-		blankDisc.playTrack(4);
-		
-		assertEquals(1, trackCounter.getPlayCount(1));
-		assertEquals(0, trackCounter.getPlayCount(2));
-		assertEquals(3, trackCounter.getPlayCount(3));
-		assertEquals(2, trackCounter.getPlayCount(4));
-	}
+    @Autowired
+    private BlankDisc blankDisc;
+
+    @Autowired
+    private TrackCounter trackCounter;
+
+    @Test
+    public void test() {
+        blankDisc.playTrack(1);
+        blankDisc.playTrack(3);
+        blankDisc.playTrack(3);
+        blankDisc.playTrack(3);
+        blankDisc.playTrack(4);
+        blankDisc.playTrack(4);
+
+        assertEquals(1, trackCounter.getPlayCount(1));
+        assertEquals(0, trackCounter.getPlayCount(2));
+        assertEquals(3, trackCounter.getPlayCount(3));
+        assertEquals(2, trackCounter.getPlayCount(4));
+    }
 
 }

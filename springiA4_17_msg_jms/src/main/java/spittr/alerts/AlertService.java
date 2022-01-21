@@ -4,8 +4,8 @@ import spittr.domain.Spittle;
 
 public interface AlertService {
 
-  void sendSpittleAlert(Spittle spittle);
+    void sendSpittleAlert(Spittle spittle);
 
-  Spittle retrieveSpittleAlert();
-  
+    Spittle retrieveSpittleAlert();
+
 }

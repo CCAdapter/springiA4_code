@@ -10,27 +10,28 @@ import spittr.domain.Spittle;
 
 /**
  * Repository interface with operations for {@link Spittle} persistence.
+ *
  * @author habuma
  */
 public interface SpittleRepository {
 
-  long count();
-  
-  @Cacheable("spittleCache")
-  List<Spittle> findRecent();
+    long count();
 
-  List<Spittle> findRecent(int count);
+    @Cacheable("spittleCache")
+    List<Spittle> findRecent();
 
-  @Cacheable("spittleCache")
-  Spittle findOne(long id);
+    List<Spittle> findRecent(int count);
 
-  @CachePut(value="spittleCache", key="#result.id")
-  Spittle save(Spittle spittle);
-    
-  @Cacheable("spittleCache")
-  List<Spittle> findBySpitterId(long spitterId);
-  
-  @CacheEvict(value="spittleCache",condition="")
-  void delete(long id);
-    
+    @Cacheable("spittleCache")
+    Spittle findOne(long id);
+
+    @CachePut(value = "spittleCache", key = "#result.id")
+    Spittle save(Spittle spittle);
+
+    @Cacheable("spittleCache")
+    List<Spittle> findBySpitterId(long spitterId);
+
+    @CacheEvict(value = "spittleCache", condition = "")
+    void delete(long id);
+
 }

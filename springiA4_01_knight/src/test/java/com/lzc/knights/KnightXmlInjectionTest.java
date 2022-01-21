@@ -1,7 +1,7 @@
-/**  
+/**
  * FileName:     KnightXmlInjectionTest.java
  * Createdate:   2019-02-13 13:30:37
- */  
+ */
 
 
 package com.lzc.knights;
@@ -12,13 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-/**  
+/**
  * Description:   
  * Copyright:   Copyright (c)2019 
- * @author:     LiZC  
- * @version:    1.0  
+ * @author: LiZC
+ * @version: 1.0
  * Create at:   2019-02-13 13:30:37  
- *  
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -29,11 +29,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("classpath:META-INF/spring/minstrel.xml")
 public class KnightXmlInjectionTest {
 
-	@Autowired
-	Knight knight;
-	
-	@Test
-	public void shouldInjectKnightWithSlayDragonQuest() {
-		knight.embarkOnQuest();
-	}
+    @Autowired
+    Knight knight;
+
+    @Test
+    public void shouldInjectKnightWithSlayDragonQuest() {
+        knight.embarkOnQuest();
+    }
 }

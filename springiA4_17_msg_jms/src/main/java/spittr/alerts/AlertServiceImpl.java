@@ -6,11 +6,11 @@ import spittr.domain.Spittle;
 
 public class AlertServiceImpl implements AlertService {
 
-  private JmsOperations jmsOperations;
+    private JmsOperations jmsOperations;
 
-  public AlertServiceImpl(JmsOperations jmsOperations) {
-    this.jmsOperations = jmsOperations;
-  }
+    public AlertServiceImpl(JmsOperations jmsOperations) {
+        this.jmsOperations = jmsOperations;
+    }
 
 //  public void sendSpittleAlert(final Spittle spittle) {
 //    jmsOperations.send(
@@ -37,10 +37,10 @@ public class AlertServiceImpl implements AlertService {
   }
 */
 
-  public void sendSpittleAlert(Spittle spittle) {
-    jmsOperations.convertAndSend(spittle);
-  }
-  
+    public void sendSpittleAlert(Spittle spittle) {
+        jmsOperations.convertAndSend(spittle);
+    }
+
 //  public Spittle getSpittleAlert() {
 //    try {
 //    ObjectMessage message = (ObjectMessage) jmsOperations.receive();
@@ -49,9 +49,9 @@ public class AlertServiceImpl implements AlertService {
 //      throw JmsUtils.convertJmsAccessException(e);
 //    }
 //  }
-  
-  public Spittle retrieveSpittleAlert() {
-    return (Spittle) jmsOperations.receiveAndConvert();
-  }
+
+    public Spittle retrieveSpittleAlert() {
+        return (Spittle) jmsOperations.receiveAndConvert();
+    }
 
 }

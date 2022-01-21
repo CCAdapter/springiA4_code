@@ -22,20 +22,20 @@ import com.mongodb.ServerAddress;
 @EnableMongoRepositories(basePackages = "orders.db")//启用Repository自动生成功能
 //@PropertySource("classpath:mongodb.properties")
 public class MongoConfig extends AbstractMongoConfiguration {
-	
+
 //	@Autowired
 //	private Environment env;
 
-	@Override
-	protected String getDatabaseName() {
-		return "OrdersDB";
-	}
-	
-	//默认端口27017
-	@Override
-	public Mongo mongo() throws Exception {
-		return new MongoClient();
-		//创建MongoDB凭证
+    @Override
+    protected String getDatabaseName() {
+        return "OrdersDB";
+    }
+
+    //默认端口27017
+    @Override
+    public Mongo mongo() throws Exception {
+        return new MongoClient();
+        //创建MongoDB凭证
 //		MongoCredential credential = 
 //				MongoCredential.createMongoCRCredential(
 //						env.getProperty("mongo.username"), 
@@ -44,13 +44,13 @@ public class MongoConfig extends AbstractMongoConfiguration {
 //		//创建MongoClient，
 //		return new MongoClient(new ServerAddress("localhost", 37017), 
 //				Arrays.asList(credential));
-	}
-	
-	/*
-	 * 继承AbstractMongoConfiguration后，将会隐式地创建MongoTemplate bean
-	 * 因为mongo()会创建MongoClient实例并抛出Exception，故可不使用MongoFactoryBean
-	 */
-	//不必担心MongoClient的UnknownHostException
+    }
+
+    /*
+     * 继承AbstractMongoConfiguration后，将会隐式地创建MongoTemplate bean
+     * 因为mongo()会创建MongoClient实例并抛出Exception，故可不使用MongoFactoryBean
+     */
+    //不必担心MongoClient的UnknownHostException
 //	@Bean
 //	public MongoFactoryBean mongo() {
 //		MongoFactoryBean mongo = new MongoFactoryBean();

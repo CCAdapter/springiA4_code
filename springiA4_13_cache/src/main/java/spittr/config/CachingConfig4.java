@@ -10,9 +10,9 @@ import org.springframework.context.annotation.Configuration;
 @EnableCaching // 启用缓存
 public class CachingConfig4 {
 
-	@Bean
-	public CacheManager cmCacheManager() {
-		return new ConcurrentMapCacheManager();//基于内存
-	}
+    @Bean
+    public CacheManager cmCacheManager() {
+        return new ConcurrentMapCacheManager();//基于内存
+    }
 
 }

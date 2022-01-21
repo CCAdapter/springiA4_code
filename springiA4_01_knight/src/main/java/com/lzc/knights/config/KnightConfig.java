@@ -1,7 +1,7 @@
-/**  
+/**
  * FileName:     KnightConfig.java
  * Createdate:   2019-02-13 11:57:35
- */  
+ */
 package com.lzc.knights.config;
 
 import org.springframework.context.annotation.Bean;
@@ -12,13 +12,13 @@ import com.lzc.knights.Quest;
 import com.lzc.knights.impl2.BraveKnight;
 import com.lzc.knights.impl2.SlayDragonQuest;
 
-/**  
+/**
  * Description: JavaConfig，效果同knight.xml  
  * Copyright:   Copyright (c)2019 
- * @author:     LiZC  
- * @version:    1.0  
+ * @author: LiZC
+ * @version: 1.0
  * Create at:   2019-02-13 11:57:35  
- *  
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -26,15 +26,15 @@ import com.lzc.knights.impl2.SlayDragonQuest;
  */
 @Configuration
 public class KnightConfig {
-	
-	@Bean
-	public Knight knight() {
-		return new BraveKnight(quest());
-	}
-	
-	@Bean
-	public Quest quest() {
-		return new SlayDragonQuest(System.out);
-	}
+
+    @Bean
+    public Knight knight() {
+        return new BraveKnight(quest());
+    }
+
+    @Bean
+    public Quest quest() {
+        return new SlayDragonQuest(System.out);
+    }
 
 }

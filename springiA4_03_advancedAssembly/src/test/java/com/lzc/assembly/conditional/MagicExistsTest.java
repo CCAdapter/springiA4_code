@@ -1,7 +1,7 @@
 
- /**
+/**
  * FileName:     MagicExistsTest.java
- * Createdate:   2019-02-16 21:35:21   
+ * Createdate:   2019-02-16 21:35:21
  */
 
 package com.lzc.assembly.conditional;
@@ -18,10 +18,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Description:   
  * Copyright:   Copyright (c)2019    
- * @author:     LZC  
- * @version:    1.0  
- * @date:   	2019-02-16 21:35:21   
- *  
+ * @author: LZC
+ * @version: 1.0
+ * @date: 2019-02-16 21:35:21
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -29,19 +29,19 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes=MagicConfig.class)
+@ContextConfiguration(classes = MagicConfig.class)
 public class MagicExistsTest {
-	
-	@Autowired
-	private ApplicationContext context;
-	
-	@Autowired(required=false)
-	private MagicBean magicBean;
 
-	@Test
-	public void shouldNotNull() {
-		assertTrue(context.containsBean("magicBean"));
-		assertNotNull(magicBean);
-	}
+    @Autowired
+    private ApplicationContext context;
+
+    @Autowired(required = false)
+    private MagicBean magicBean;
+
+    @Test
+    public void shouldNotNull() {
+        assertTrue(context.containsBean("magicBean"));
+        assertNotNull(magicBean);
+    }
 
 }

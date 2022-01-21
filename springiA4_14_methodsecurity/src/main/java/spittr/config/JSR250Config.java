@@ -10,19 +10,19 @@ import spittr.service.JSR250SpittleService;
 import spittr.service.SpittleService;
 
 @Configuration
-@EnableGlobalMethodSecurity(jsr250Enabled=true)//jsr250Enabled为true：创建切点，包装带有@RolesAllowed注解的方法
+@EnableGlobalMethodSecurity(jsr250Enabled = true)//jsr250Enabled为true：创建切点，包装带有@RolesAllowed注解的方法
 public class JSR250Config extends GlobalMethodSecurityConfiguration {
 
-  @Override
-  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    auth
-    .inMemoryAuthentication()
-      .withUser("user").password("password").roles("USER");
-  }
-  
-  @Bean
-  public SpittleService spitterService() {
-    return new JSR250SpittleService();
-  }
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth
+                .inMemoryAuthentication()
+                .withUser("user").password("password").roles("USER");
+    }
+
+    @Bean
+    public SpittleService spitterService() {
+        return new JSR250SpittleService();
+    }
 
 }

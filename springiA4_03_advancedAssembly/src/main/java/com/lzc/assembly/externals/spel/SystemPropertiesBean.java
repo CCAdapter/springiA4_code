@@ -1,7 +1,7 @@
 
- /**
+/**
  * FileName:     SystemPropertiesBean.java
- * Createdate:   2019-02-18 11:17:24   
+ * Createdate:   2019-02-18 11:17:24
  */
 
 package com.lzc.assembly.externals.spel;
@@ -9,10 +9,10 @@ package com.lzc.assembly.externals.spel;
 /**
  * Description:   
  * Copyright:   Copyright (c)2019    
- * @author:     LZC  
- * @version:    1.0  
- * @date:   	2019-02-18 11:17:24   
- *  
+ * @author: LZC
+ * @version: 1.0
+ * @date: 2019-02-18 11:17:24
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -21,25 +21,25 @@ package com.lzc.assembly.externals.spel;
 
 public class SystemPropertiesBean {
 
-	private String javaVersion;
-	private String javaHome;
+    private String javaVersion;
+    private String javaHome;
 
-	public SystemPropertiesBean(String javaVersion, String javaHome) {
-		this.javaVersion = javaVersion;
-		this.javaHome = javaHome;
-	}
+    public SystemPropertiesBean(String javaVersion, String javaHome) {
+        this.javaVersion = javaVersion;
+        this.javaHome = javaHome;
+    }
 
-	public String getJavaVersion() {
-		return javaVersion;
-	}
+    public String getJavaVersion() {
+        return javaVersion;
+    }
 
-	public String getJavaHome() {
-		return javaHome;
-	}
+    public String getJavaHome() {
+        return javaHome;
+    }
 
-	@Override
-	public String toString() {
-		return "SystemPropertiesBean [javaVersion=" + javaVersion + ", javaHome=" + javaHome + "]";
-	}
-	
+    @Override
+    public String toString() {
+        return "SystemPropertiesBean [javaVersion=" + javaVersion + ", javaHome=" + javaHome + "]";
+    }
+
 }

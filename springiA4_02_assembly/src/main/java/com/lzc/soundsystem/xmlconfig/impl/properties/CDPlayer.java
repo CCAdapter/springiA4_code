@@ -7,16 +7,16 @@ import com.lzc.soundsystem.xmlconfig.MediaPlayer;
 
 public class CDPlayer implements MediaPlayer {
 
-	private CompactDisc cd;
+    private CompactDisc cd;
 
-	// 属性注入
-	@Autowired
-	public void setCd(CompactDisc cd) {
-		this.cd = cd;
-	}
+    // 属性注入
+    @Autowired
+    public void setCd(CompactDisc cd) {
+        this.cd = cd;
+    }
 
-	public void play() {
-		cd.play();
-	}
+    public void play() {
+        cd.play();
+    }
 
 }

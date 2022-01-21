@@ -1,7 +1,7 @@
 
- /**
+/**
  * FileName:     MagicExistsCondition.java
- * Createdate:   2019-02-16 21:27:09   
+ * Createdate:   2019-02-16 21:27:09
  */
 
 package com.lzc.assembly.conditional;
@@ -14,10 +14,10 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 /**
  * Description:   
  * Copyright:   Copyright (c)2019    
- * @author:     LZC  
- * @version:    1.0  
- * @date:   	2019-02-16 21:27:09   
- *  
+ * @author: LZC
+ * @version: 1.0
+ * @date: 2019-02-16 21:27:09
+ *
  * Modification History:  
  * Date         Author      Version     Description  
  * ------------------------------------------------------------------  
@@ -26,12 +26,12 @@ import org.springframework.core.type.AnnotatedTypeMetadata;
 
 public class MagicExistsCondition implements Condition {
 
-	@Override
-	public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
-		//获取环境
-		Environment env = context.getEnvironment();
-		//包含环境属性 magic 则返回true
-		return env.containsProperty("magic");
-	}
+    @Override
+    public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata) {
+        //获取环境
+        Environment env = context.getEnvironment();
+        //包含环境属性 magic 则返回true
+        return env.containsProperty("magic");
+    }
 
 }
